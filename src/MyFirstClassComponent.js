@@ -16,6 +16,7 @@ class MyFirstClassComponent extends Component {
 
   componentDidMount() {
     console.log("this is component did mount");
+    console.log("Component Changed");
   }
 
   shouldComponentUpdate() {
