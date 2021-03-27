@@ -5,18 +5,17 @@ class MyFirstClassComponent extends Component {
     super();
     this.state = {
       counter: 0,
-      ChangedBy: "Raja"
+      ChangedBy: "Raja",
     };
   }
 
   static getDerivedStateFromProps(state) {
-    
-    console.log("hello this is derived state from props")
+    console.log("hello this is derived state from props");
     return null;
   }
 
   componentDidMount() {
-    console.log("this is component did mount")
+    console.log("this is component did mount");
   }
 
   shouldComponentUpdate() {
@@ -25,25 +24,28 @@ class MyFirstClassComponent extends Component {
   }
 
   componentDidUpdate() {
-    console.log("this is component Did update")
+    console.log("this is component Did update");
   }
 
   componentWillUnmount() {
-    console.log("this is component Unmount")
+    console.log("this is component Unmount");
   }
-
 
   myButtonClick = (e) => {
     e.preventDefault();
     this.setState({
-        counter: this.state.counter + 1,
-        ChangedBy: "Yashwanth"
-    })
-  }
+      counter: this.state.counter + 1,
+      ChangedBy: "Yashwanth",
+    });
+  };
   render() {
     return (
       <div>
-        <h1>This is My Class Component {this.state.counter} this counter changed by {this.state.ChangedBy} {this.props.mydatahere}</h1>
+        <h1>
+          {" "}
+          a little bit change in my project{this.state.counter} this counter
+          changed by {this.state.ChangedBy} {this.props.mydatahere}
+        </h1>
         <button onClick={(e) => this.myButtonClick(e)}>On Click</button>
       </div>
     );
