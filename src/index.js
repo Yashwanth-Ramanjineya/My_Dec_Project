@@ -13,6 +13,7 @@ import myReducer from "./myReducer";
 import { Provider } from "react-redux";
 import MyThirdCls from "./MyThirdCls";
 import FunctionalComponent from "./FunctionalComponent";
+import Sunil from "./Sunil";
 
 const myStore = createStore(myReducer);
 
@@ -38,6 +39,9 @@ const routing = (
         <li>
           <Link to="/FunctionalComponent">Functional Component</Link>
         </li>
+        <li>
+          <Link to="/Sunil">Sunil</Link>
+        </li>
       </ul>
       <Switch>
         <Route exact path="/" component={App} />
@@ -45,7 +49,12 @@ const routing = (
         <Route exact path="/myfirstclass" component={MyFirstClassComponent} />
         <Route exact path="/mySecondclass" component={MyFirstComponent} />
         <Route exact path="/MyThirdCls" component={MyThirdCls} />
-        <Route exact path="/FunctionalComponent" component ={FunctionalComponent}/>
+        <Route
+          exact
+          path="/FunctionalComponent"
+          component={FunctionalComponent}
+        />
+        <Route exact path="/Sunil" component={Sunil} />
         <Route component={NotFound} />
       </Switch>
     </div>
