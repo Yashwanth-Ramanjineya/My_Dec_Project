@@ -14,6 +14,7 @@ import { Provider } from "react-redux";
 import MyThirdCls from "./MyThirdCls";
 import FunctionalComponent from "./FunctionalComponent";
 import Sunil from "./Sunil";
+import Veda from "./Veda";
 
 const myStore = createStore(myReducer);
 
@@ -42,6 +43,9 @@ const routing = (
         <li>
           <Link to="/Sunil">Sunil</Link>
         </li>
+        <li>
+          <Link to="/Veda">Veda</Link>
+        </li>
       </ul>
       <Switch>
         <Route exact path="/" component={App} />
@@ -55,6 +59,7 @@ const routing = (
           component={FunctionalComponent}
         />
         <Route exact path="/Sunil" component={Sunil} />
+        <Route exact path="/Veda" component={Veda} />
         <Route component={NotFound} />
       </Switch>
     </div>
