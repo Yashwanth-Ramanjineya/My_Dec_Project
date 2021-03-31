@@ -15,6 +15,7 @@ import MyThirdCls from "./MyThirdCls";
 import FunctionalComponent from "./FunctionalComponent";
 import Sunil from "./Sunil";
 import Veda from "./Veda";
+import Sunil2 from "./Sunil2";
 
 const myStore = createStore(myReducer);
 
@@ -46,6 +47,9 @@ const routing = (
         <li>
           <Link to="/Veda">Veda</Link>
         </li>
+        <li>
+          <Link to="/Sunil2">Sunil2</Link>
+        </li>
       </ul>
       <Switch>
         <Route exact path="/" component={App} />
@@ -60,6 +64,7 @@ const routing = (
         />
         <Route exact path="/Sunil" component={Sunil} />
         <Route exact path="/Veda" component={Veda} />
+        <Route exact path="/Sunil2" component={Sunil2} />
         <Route component={NotFound} />
       </Switch>
     </div>
