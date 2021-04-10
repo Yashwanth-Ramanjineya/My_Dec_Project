@@ -7,7 +7,8 @@ import {useSelector} from 'react-redux';
 function App() {
   const myStoreData = useSelector(state => state);
   console.log(myStoreData, "=====================");
-  console.log("fkjngksdnlskz")
+  console.log("fkjngksdnlskz");
+  
   return (
     <div className="App">
       <header className="App-header">
