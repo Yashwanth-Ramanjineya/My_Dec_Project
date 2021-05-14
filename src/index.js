@@ -4,67 +4,21 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Route, BrowserRouter as Router, Link, Switch } from "react-router-dom";
-import MyApp from "./MyApp";
-import MyFirstClassComponent from "./MyFirstClassComponent";
-import MyFirstComponent from "./MyFirstCompoent";
 import NotFound from "./NotFound";
 import { createStore } from "redux";
 import myReducer from "./myReducer";
 import { Provider } from "react-redux";
-import MyThirdCls from "./MyThirdCls";
-import FunctionalComponent from "./FunctionalComponent";
-import Sunil from "./Sunil";
-import Veda from "./Veda";
-import Sunil2 from "./Sunil2";
+import EmpDetailsForm from './EmpDetailsForm';
+
 
 const myStore = createStore(myReducer);
 
 const routing = (
   <Router>
     <div>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/myapp">MY App</Link>
-        </li>
-        <li>
-          <Link to="/myfirstclass">MY First Class</Link>
-        </li>
-        <li>
-          <Link to="/mySecondclass">My Second Class</Link>
-        </li>
-        <li>
-          <Link to="/MyThirdCls">MyThirdCls</Link>
-        </li>
-        <li>
-          <Link to="/FunctionalComponent">Functional Component</Link>
-        </li>
-        <li>
-          <Link to="/Sunil">Sunil</Link>
-        </li>
-        <li>
-          <Link to="/Veda">Veda</Link>
-        </li>
-        <li>
-          <Link to="/Sunil2">Sunil2</Link>
-        </li>
-      </ul>
       <Switch>
         <Route exact path="/" component={App} />
-        <Route exact path="/myapp" component={MyApp} />
-        <Route exact path="/myfirstclass" component={MyFirstClassComponent} />
-        <Route exact path="/mySecondclass" component={MyFirstComponent} />
-        <Route exact path="/MyThirdCls" component={MyThirdCls} />
-        <Route
-          exact
-          path="/FunctionalComponent"
-          component={FunctionalComponent}
-        />
-        <Route exact path="/Sunil" component={Sunil} />
-        <Route exact path="/Veda" component={Veda} />
-        <Route exact path="/Sunil2" component={Sunil2} />
+        <Route exact path="/empDetailsForm" component={EmpDetailsForm} />
         <Route component={NotFound} />
       </Switch>
     </div>
