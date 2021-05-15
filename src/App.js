@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -43,6 +43,12 @@ export default function SignIn(props) {
 	  userErr: false,
 	  pwdErr: false
   })
+
+  useEffect(() => {
+	if (localStorage.getItem('username') && localStorage.getItem('password')) {
+		props.history.push("/empDetailsForm");
+	}
+  }, [])
 
   const validations = () => {
     if (!loginDetails.username && !loginDetails.password) {

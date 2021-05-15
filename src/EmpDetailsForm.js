@@ -8,6 +8,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import "./App.css";
+import { useDispatch, useSelector } from "react-redux";
+import {storeTableData,resetStoredData} from './Actions';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,6 +39,7 @@ const columns = [{
 
 
 export default function EmpDetailsForm(props) {
+  const dispatch = useDispatch();
   const classes = useStyles();
   const initialFormData = {
     firstName: "",
@@ -51,9 +54,9 @@ export default function EmpDetailsForm(props) {
   }
   
   const [empDataForm, setEmpDataForm] = useState(initialFormData);
-  const [tableDetails, setTableDetails] = useState([]);
 
   const [err, setErr] = useState(initialErr);
+  const tableDetails = useSelector((state) => state && state.data);
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -98,12 +101,12 @@ export default function EmpDetailsForm(props) {
   };
 
   const handleSubmit = (e) => {
-    const tableData = [...tableDetails];
+    const tableData = tableDetails ? [...tableDetails] : [];
     if (!validations()) {
       tableData.push(empDataForm);
-      setTableDetails(tableData);
+      dispatch(storeTableData(tableData));
       setEmpDataForm(initialFormData);
-      setErr(initialErr)
+      setErr(initialErr);
     }
   }
 
@@ -111,6 +114,7 @@ export default function EmpDetailsForm(props) {
     localStorage.removeItem("username");
     localStorage.removeItem("password");
     props.history.push('/');
+    dispatch(resetStoredData([]));
   }
 
   console.log(tableDetails)
