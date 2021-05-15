@@ -46,3 +46,7 @@ body {
 .col {
   flex: unset !important;
 }
+
+.emp-container {
+	padding: 100px;
+}

@@ -35,8 +35,8 @@ export default function EmployeeTable(props) {
               <TableCell component="th" scope="row">
                 {row.firstName}
               </TableCell>
-              <TableCell align="right">{row.lastName}</TableCell>
-              <TableCell align="right">{row.empid}</TableCell>
+              <TableCell>{row.lastName}</TableCell>
+              <TableCell>{row.empId}</TableCell>
             </TableRow>
           ))}
         </TableBody>

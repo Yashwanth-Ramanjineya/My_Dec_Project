@@ -45,20 +45,30 @@ export default function SignIn(props) {
   })
 
   const validations = () => {
+    if (!loginDetails.username && !loginDetails.password) {
+		setErr({
+		  ...err,
+		  userErr: true,
+		  pwdErr: true
+		});
+		return true;
+	  }
 	  if (!loginDetails.username) {
-		  setErr({
-			  ...err, userErr: true
-		  })
-		  return true;
+		setErr({
+		  ...err,
+		  userErr: true
+		});
+		return true;
 	  }
 	  if (!loginDetails.password) {
 		setErr({
-			...err, pwdErr: true
-		})
+		  ...err,
+		  pwdErr: true,
+		});
 		return true;
-	}
-	return false;
-  }
+	  }
+	  return false;
+  };
 
   const handleSave = () => {
     if (!validations()) {
